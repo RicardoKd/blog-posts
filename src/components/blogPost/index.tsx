@@ -19,11 +19,18 @@ const BlogPost = ({ post }: { post: IPost }) => {
     void dispatch(deletePost(id));
   };
 
+  const viewPostBtnClick = () => {
+    navigate(ROUTES.VIEW_POST, { state: { id, title, body } });
+  };
+
   return (
     <div className="post">
       <div className="postHeader">
         <h3>{title}</h3>
         <div>
+          <button onClick={() => viewPostBtnClick()} type="button">
+            View
+          </button>
           <button onClick={() => editPostBtnClick()} type="button">
             Edit
           </button>

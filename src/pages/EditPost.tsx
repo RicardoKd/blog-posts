@@ -5,13 +5,12 @@ import { updatePost } from '../reducers/PostsReducer';
 const EditPost = () => {
   const dispatch = useAppDispatch();
   const { state } = useLocation();
-
-  console.log('state', state);
+  const { id: postId } = state;
 
   const a = () => {
     void dispatch(
       updatePost({
-        postId: 1,
+        postId,
         payload: { title: 'New Title', body: 'New Body' },
       })
     );

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../app/Hooks';
+import { ROUTES } from '../Constants';
 import { createPost } from '../reducers/PostsReducer';
-import './App.css';
 
 const CreatePost = () => {
   const dispatch = useAppDispatch();
@@ -12,8 +12,8 @@ const CreatePost = () => {
   const [body, setBody] = useState('');
 
   const saveBtnClick = () => {
-    dispatch(createPost({ title, body }));
-    navigate(ROUTES.HOME)
+    void dispatch(createPost({ title, body }));
+    navigate(ROUTES.HOME);
   };
 
   return (
@@ -23,7 +23,7 @@ const CreatePost = () => {
         id="postTitle"
         type="text"
         value={title}
-        onChange={(event) => setTitle(event.target.innerText)}
+        onChange={(event) => setTitle(event.target.value)}
       />
       <label htmlFor="postBody">Post Body:</label>
       <textarea
@@ -31,7 +31,7 @@ const CreatePost = () => {
         value={body}
         cols={30}
         rows={10}
-        onChange={(event) => setBody(event.target.innerText)}
+        onChange={(event) => setBody(event.target.value)}
       ></textarea>
       <button onClick={() => saveBtnClick()} type="button">
         Save

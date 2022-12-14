@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { selectCommentsState } from '../app/CommentsSlice';
 import { useAppDispatch } from '../app/Hooks';
+import { ROUTES } from '../Constants';
 import { createComment, getComments } from '../reducers/CommentsReducer';
-import './App.css';
 
 const ViewPost = () => {
   const { status, value: comments } = useSelector(selectCommentsState);
@@ -12,7 +12,7 @@ const ViewPost = () => {
   const navigate = useNavigate();
 
   const { state } = useLocation();
-  const { id: postId } = state;
+  const { id: postId, title, body } = state;
 
   const [commentText, setCommentText] = useState('');
 
@@ -37,11 +37,11 @@ const ViewPost = () => {
       <button onClick={() => backBtnClick()} type="button">
         Back
       </button>
-      <h3>Title</h3>
-      <p>Body</p>
+      <h3>{title}</h3>
+      <p>{body}</p>
       <section>
         <h4>Comments</h4>
-        <form onSubmit={(e) => postCommentBtnClick(e)}  method="post">
+        <form onSubmit={(e) => postCommentBtnClick(e)} method="post">
           <input
             type="text"
             placeholder="Your comment"
