@@ -1,6 +1,6 @@
 import { useAppDispatch } from '../../app/Hooks';
 import IPost from '../../interfaces/IPost';
-import { updatePost } from '../../reducers/PostsReducer';
+import { deletePost, updatePost } from '../../reducers/PostsReducer';
 
 const BlogPost = ({ post }: { post: IPost }) => {
   const { id, title, body } = post;
@@ -15,13 +15,22 @@ const BlogPost = ({ post }: { post: IPost }) => {
     );
   };
 
+  const deletePostBtnClick = () => {
+    void dispatch(deletePost(id));
+  };
+
   return (
     <div className="post">
       <div className="postHeader">
         <h3>{title}</h3>
-        <button onClick={() => editPostBtnClick()} type="button">
-          Edit
-        </button>
+        <div>
+          <button onClick={() => editPostBtnClick()} type="button">
+            Edit
+          </button>
+          <button onClick={() => deletePostBtnClick()} type="button">
+            Delete
+          </button>
+        </div>
       </div>
       <div className="postBody">{body}</div>
     </div>

@@ -7,9 +7,11 @@ const PostsContainer = () => {
 
   return (
     <main>
-      {posts.map((post, index) => (
-       <BlogPost post={post} key={index} />
-      ))}
+      <div className="blogPostsWrapper">
+        {posts.map((post, index) => (
+          <BlogPost post={post} key={index} />
+        ))}
+      </div>
     </main>
   );
 };
