@@ -46,7 +46,7 @@ export const createPost = createAsyncThunk(
 );
 
 export const updatePost = createAsyncThunk(
-  'createPost',
+  'updatePost',
   async ({
     postId,
     payload,
@@ -79,7 +79,7 @@ export const updatePost = createAsyncThunk(
 );
 
 export const deletePost = createAsyncThunk(
-  'createPost',
+  'deletePost',
   async (postId: number) => {
     const requestOptions = {
       method: 'DELETE',
