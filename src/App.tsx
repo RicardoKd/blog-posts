@@ -1,10 +1,26 @@
+import { useEffect } from 'react';
 import './App.css';
-import Header from './components';
+import { useAppDispatch, useAppSelector } from './app/Hooks';
+import { selectPostsStatus } from './app/PostsSlice';
+import Header from './components/header';
+import PostsContainer from './components/postsContainer';
+import { getPosts } from './reducers/PostsReducer';
 
 const App = () => {
-  return <div className="App">
-    <Header></Header>
-  </div>;
+  const dispatch = useAppDispatch();
+
+  const postsStatus = useAppSelector(selectPostsStatus);
+
+  useEffect(() => {
+    void dispatch(getPosts());
+  }, []);
+
+  return (
+    <div className="App">
+      <Header />
+      {postsStatus === 'fulfilled' ? <PostsContainer /> : <p>loading posts</p>}
+    </div>
+  );
 };
 
 export default App;

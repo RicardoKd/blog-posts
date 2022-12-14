@@ -1,5 +1,5 @@
-import { useAppDispatch } from '../app/Hooks';
-import { createPost } from '../reducers/PostsReducer';
+import { useAppDispatch } from '../../app/Hooks';
+import { createPost } from '../../reducers/PostsReducer';
 
 const Header = () => {
   const dispatch = useAppDispatch();

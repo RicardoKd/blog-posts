@@ -27,6 +27,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 10px 0;
 }
 
 header > * {
@@ -40,4 +41,18 @@ h1 {
 
 main {
   background-color: #2ecc71;
+  min-width: 300px;
+  margin: 0 20px;
+  padding: 30px 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+main > * {
+  background-color: #bdc3c7;
+  border-radius: 20px;
+  padding: 30px 20px;
+  margin: 10px 0;
 }
