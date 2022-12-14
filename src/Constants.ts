@@ -13,6 +13,7 @@ const API = Object.freeze({
 
 const SLICE_NAMES = {
   POSTS: 'posts',
+  COMMENTS: 'comments',
 };
 
 export { API, SLICE_NAMES };
