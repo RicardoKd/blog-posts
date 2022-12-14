@@ -1,5 +1,5 @@
 :root {
-  --text-color: rgb(245, 245, 245);
+  --text-color: rgb(5, 5, 5);
   --bg-color: rgb(5, 5, 5);
 
   --main-transition-time: 0.5s;
@@ -9,11 +9,35 @@
   margin: 0;
   padding: 0;
   color: var(--text-color);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
 body,
 #root {
   min-height: 100vh;
+}
+
+body {
+  background-color: #ecf0f1;
+}
+
+header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header > * {
+  margin: 0 30px;
+}
+
+h1 {
+  height: 100%;
+  font-size: 30px;
+}
+
+main {
+  background-color: #2ecc71;
 }
