@@ -38,8 +38,12 @@ export const postsSlice = createSlice({
         state.status = 'pending';
       })
       .addCase(updatePost.fulfilled, (state, action) => {
+        const updatedPostIndex = state.value.findIndex(
+          (post) => post.id === action.payload.id
+        );
+
         state.status = 'fulfilled';
-        state.value.push(action.payload);
+        state.value[updatedPostIndex] = action.payload;
       })
       .addCase(deletePost.pending, (state) => {
         state.status = 'pending';
