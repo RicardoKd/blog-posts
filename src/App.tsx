@@ -1,32 +1,16 @@
-import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import { useAppDispatch, useAppSelector } from './app/Hooks';
-import { selectPostsStatus } from './app/PostsSlice';
-import Header from './components/header';
-import PostsContainer from './components/postsContainer';
-import { getPosts } from './reducers/PostsReducer';
+import { ROUTES } from './Constants';
+import EditPost from './pages/EditPost';
+import Home from './pages/Home';
 
 const App = () => {
-  const dispatch = useAppDispatch();
-
-  const postsStatus = useAppSelector(selectPostsStatus);
-
-  useEffect(() => {
-    void dispatch(getPosts());
-  }, []);
-
   return (
-    <div className="App">
-      <Header />
-      {postsStatus === 'fulfilled' ? (
-        <PostsContainer />
-      ) : (
-        <div className="ldsRipple">
-          <div></div>
-          <div></div>
-        </div>
-      )}
-    </div>
+    <Routes>
+      <Route path={ROUTES.GENERAL} element={<Home />} />
+      <Route path={ROUTES.HOME} element={<Home />} />
+      <Route path={ROUTES.EDIT_POST} element={<EditPost />} />
+    </Routes>
   );
 };
 

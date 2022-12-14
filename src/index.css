@@ -23,7 +23,6 @@ body {
 }
 
 header {
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,8 +39,14 @@ h1 {
 }
 
 main {
+  display: flex;
+  justify-content: center;
+}
+
+.blogPostsWrapper {
   background-color: #2ecc71;
-  min-width: 300px;
+  max-width: 1000px;
+  min-width: 360px;
   margin: 0 20px;
   padding: 30px 20px;
   border-radius: 20px;
@@ -50,16 +55,14 @@ main {
   align-items: center;
 }
 
-main > * {
+.post {
+  /* 40px are padding from <main> */
+  min-width: calc(100% - 40px);
+  max-width: 750px;
   background-color: #bdc3c7;
   border-radius: 20px;
   padding: 30px 20px;
   margin: 10px 0;
-}
-
-.post {
-  /* 40px are padding from <main> */
-  min-width: calc(100% - 40px);
 }
 
 .postHeader {
