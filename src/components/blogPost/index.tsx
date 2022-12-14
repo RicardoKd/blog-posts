@@ -1,18 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../app/Hooks';
+import { ROUTES } from '../../Constants';
 import IPost from '../../interfaces/IPost';
-import { deletePost, updatePost } from '../../reducers/PostsReducer';
+import { deletePost } from '../../reducers/PostsReducer';
 
 const BlogPost = ({ post }: { post: IPost }) => {
   const { id, title, body } = post;
+
+  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
 
   const editPostBtnClick = () => {
-    void dispatch(
-      updatePost({
-        postId: id,
-        payload: { title: 'New Title', body: 'New Body' },
-      })
-    );
+    navigate(ROUTES.EDIT_POST, { state: { id } });
   };
 
   const deletePostBtnClick = () => {

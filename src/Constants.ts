@@ -16,4 +16,12 @@ const SLICE_NAMES = {
   COMMENTS: 'comments',
 };
 
-export { API, SLICE_NAMES };
+const ROUTES = {
+  GENERAL: '*',
+  HOME: '/',
+  CREATE_POST: '/posts/create',
+  EDIT_POST: '/posts/edit',
+  VIEW_POST: '/posts/view',
+};
+
+export { API, SLICE_NAMES, ROUTES };
