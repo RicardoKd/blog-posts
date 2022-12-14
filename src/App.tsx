@@ -18,7 +18,14 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      {postsStatus === 'fulfilled' ? <PostsContainer /> : <p>loading posts</p>}
+      {postsStatus === 'fulfilled' ? (
+        <PostsContainer />
+      ) : (
+        <div className="ldsRipple">
+          <div></div>
+          <div></div>
+        </div>
+      )}
     </div>
   );
 };

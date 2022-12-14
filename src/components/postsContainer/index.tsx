@@ -1,5 +1,6 @@
 import { useAppSelector } from '../../app/Hooks';
 import { selectPosts } from '../../app/PostsSlice';
+import BlogPost from '../blogPost';
 
 const PostsContainer = () => {
   const posts = useAppSelector(selectPosts);
@@ -7,7 +8,7 @@ const PostsContainer = () => {
   return (
     <main>
       {posts.map((post, index) => (
-        <p key={index}>{post.title}</p>
+       <BlogPost post={post} key={index} />
       ))}
     </main>
   );
