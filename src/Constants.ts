@@ -1,4 +1,4 @@
-const BASE_API_URL = 'https://bloggy-api.herokuapp.com/posts';
+const BASE_API_URL = 'https://bloggy-api.herokuapp.com';
 
 const API = Object.freeze({
   GET_POSTs: (postId = -1) =>
