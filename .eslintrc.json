@@ -19,6 +19,7 @@
     "react/jsx-uses-react": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "quotes": ["error", "single"],
+    "@typescript-eslint/member-delimiter-style": "off",
     "padding-line-between-statements": [
       "error",
       { "blankLine": "always", "prev": "*", "next": "return" },
