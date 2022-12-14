@@ -1,15 +1,15 @@
-import { useAppDispatch } from '../../app/Hooks';
-import { createPost } from '../../reducers/PostsReducer';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../Constants';
 
 const Header = () => {
-  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const date = new Date(Date.now());
 
   const fullDate = `Today: ${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`;
 
   const createPostBtnClick = () => {
-    void dispatch(createPost({ title: 'This is title', body: 'This is body' }));
+    navigate(ROUTES.CREATE_POST);
   };
 
   return (
