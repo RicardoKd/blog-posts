@@ -27,6 +27,13 @@ h1 {
   font-size: 30px;
 }
 
+textarea,
+input {
+  padding: 2px;
+  outline: none;
+  color: black;
+}
+
 main {
   display: flex;
   justify-content: center;

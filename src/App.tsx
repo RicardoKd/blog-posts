@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import { ROUTES } from './Constants';
 import CreatePost from './pages/CreatePost';
 import EditPost from './pages/EditPost';
