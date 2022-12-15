@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import { ROUTES } from './Constants';
-import CreatePost from './pages/CreatePost';
-import EditPost from './pages/EditPost';
+import CreatePost from './pages/createPost/CreatePost';
+import EditPost from './pages/editPost/EditPost';
 import Home from './pages/Home';
-import ViewPost from './pages/ViewPost';
+import ViewPost from './pages/viewPost/ViewPost';
 
 const App = () => {
   return (

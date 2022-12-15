@@ -9,7 +9,7 @@ export const Post = styled.div`
   padding: 30px 20px;
   margin: 10px 0;
 
-  & + * {
+  & > * {
     color: #34495e !important;
   }
 `;

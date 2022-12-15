@@ -36,20 +36,9 @@ input {
 main {
   display: flex;
   justify-content: center;
-}
-
-.viewPostCard {
-  min-width: calc(100% - 40px);
-  max-width: 750px;
-  background-color: #bdc3c7;
-  border-radius: 20px;
-  padding: 30px 20px;
+  min-height: 100vh;
 }
 
 form {
   margin-bottom: 20px;
-}
-
-.viewpostBody {
-  margin-bottom: 40px;
 }
