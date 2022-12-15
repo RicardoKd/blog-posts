@@ -14,7 +14,7 @@ const BlogPost = ({ post }: { post: IPost }) => {
   const dispatch = useAppDispatch();
 
   const editPostBtnClick = () => {
-    navigate(ROUTES.EDIT_POST, { state: { id } });
+    navigate(ROUTES.EDIT_POST, { state: { id, title, body } });
   };
 
   const deletePostBtnClick = () => {

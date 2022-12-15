@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const BlogPostsWrapper = styled.header`
-  background-color: #2ecc71;
+const BlogPostsWrapper = styled.section`
+  background-color: #ecf0f1;
   max-width: 1000px;
   min-width: 360px;
   margin: 0 20px;

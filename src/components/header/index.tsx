@@ -15,11 +15,13 @@ const Header = () => {
   };
 
   return (
-    <StyledHeader>
-      <p>{fullDate}</p>
-      <h1>Your Blog</h1>
-      <Button onclick={() => createPostBtnClick()} text="Create post" />
-    </StyledHeader>
+    <div>
+      <StyledHeader>
+        <p>{fullDate}</p>
+        <h1>Your Blog</h1>
+        <Button onclick={() => createPostBtnClick()} text="Create post" />
+      </StyledHeader>
+    </div>
   );
 };
 

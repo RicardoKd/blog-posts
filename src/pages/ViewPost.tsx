@@ -56,7 +56,7 @@ const ViewPost = () => {
             onChange={(e) => setCommentText(e.target.value)}
           />
           <br />
-          <button type="submit">Post comment</button>
+          <Button text="Post comment" type="submit" />
         </form>
         {status === 'fulfilled' ? (
           <div className="commentsWrapper">
