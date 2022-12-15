@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../app/Hooks';
 import { selectPostsStatus } from '../app/PostsSlice';
 import Header from '../components/header';
+import Loader from '../components/loader';
 import PostsContainer from '../components/postsContainer';
 import { getPosts } from '../reducers/PostsReducer';
 
@@ -17,14 +18,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      {postsStatus === 'fulfilled' ? (
-        <PostsContainer />
-      ) : (
-        <div className="ldsRipple">
-          <div></div>
-          <div></div>
-        </div>
-      )}
+      {postsStatus === 'fulfilled' ? <PostsContainer /> : <Loader />}
     </>
   );
 };

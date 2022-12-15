@@ -3,6 +3,8 @@ import { useAppDispatch } from '../../app/Hooks';
 import { ROUTES } from '../../Constants';
 import IPost from '../../interfaces/IPost';
 import { deletePost } from '../../reducers/PostsReducer';
+import Button from '../button';
+import { Post, PostHeader } from './style';
 
 const BlogPost = ({ post }: { post: IPost }) => {
   const { id, title, body } = post;
@@ -24,23 +26,19 @@ const BlogPost = ({ post }: { post: IPost }) => {
   };
 
   return (
-    <div className="post">
-      <div className="postHeader">
+    <Post>
+      <PostHeader>
         <h3>{title}</h3>
         <div>
-          <button onClick={() => viewPostBtnClick()} type="button">
-            View
-          </button>
-          <button onClick={() => editPostBtnClick()} type="button">
-            Edit
-          </button>
-          <button onClick={() => deletePostBtnClick()} type="button">
-            Delete
-          </button>
+          <Button onclick={() => viewPostBtnClick()} text="View" />
+          <Button onclick={() => editPostBtnClick()} text="Edit" />
+          <Button onclick={() => deletePostBtnClick()} text="Delete" />
         </div>
+      </PostHeader>
+      <div>
+        <p>{body}</p>
       </div>
-      <div className="postBody">{body}</div>
-    </div>
+    </Post>
   );
 };
 

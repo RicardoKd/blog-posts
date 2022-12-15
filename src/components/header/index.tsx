@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../Constants';
+import Button from '../button';
+import StyledHeader from './style';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -13,13 +15,11 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <StyledHeader>
       <p>{fullDate}</p>
       <h1>Your Blog</h1>
-      <button type="button" onClick={() => createPostBtnClick()}>
-        Create post
-      </button>
-    </header>
+      <Button onclick={() => createPostBtnClick()} text="Create post" />
+    </StyledHeader>
   );
 };
 

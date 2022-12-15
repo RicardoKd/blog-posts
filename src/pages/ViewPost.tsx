@@ -3,6 +3,9 @@ import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { selectCommentsState } from '../app/CommentsSlice';
 import { useAppDispatch } from '../app/Hooks';
+import Button from '../components/button';
+import Comment from '../components/comment';
+import Loader from '../components/loader';
 import { ROUTES } from '../Constants';
 import { createComment, getComments } from '../reducers/CommentsReducer';
 
@@ -26,6 +29,11 @@ const ViewPost = () => {
 
   const postCommentBtnClick = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (commentText.length === 0) {
+      alert('Can`t post empty comment!');
+
+      return;
+    }
 
     setCommentText('');
 
@@ -33,34 +41,31 @@ const ViewPost = () => {
   };
 
   return (
-    <div>
-      <button onClick={() => backBtnClick()} type="button">
-        Back
-      </button>
+    <div className="viewPostCard">
+      <Button onclick={() => backBtnClick()} text="Back" />
       <h3>{title}</h3>
-      <p>{body}</p>
+      <p className="viewpostBody">{body}</p>
       <section>
         <h4>Comments</h4>
         <form onSubmit={(e) => postCommentBtnClick(e)} method="post">
-          <input
-            type="text"
+          <textarea
+            rows={4}
+            cols={80}
             placeholder="Your comment"
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}
           />
+          <br />
           <button type="submit">Post comment</button>
         </form>
         {status === 'fulfilled' ? (
           <div className="commentsWrapper">
             {comments.map((comment, index) => (
-              <p key={index}>{comment.body}</p>
+              <Comment text={comment.body} key={index} />
             ))}
           </div>
         ) : (
-          <div className="lds-ripple">
-            <div></div>
-            <div></div>
-          </div>
+          <Loader />
         )}
       </section>
     </div>
